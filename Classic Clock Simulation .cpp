@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<windows.h>
 #include <gl/glut.h>
-#include <math.h>//for PI value , sine and cosine function that we used to draw lines
+#include <math.h>
 float angleHour= 0,angleMin  = 0,angleSec  = 0, clockR = 80.0f;
 float angle1min = M_PI / 30.0f,minStart= 0.9f,minEnd=1.0f,stepStart = 0.8f,stepEnd   = 1.0f;
 void init()
@@ -10,7 +10,6 @@ void init()
     glMatrixMode(GL_PROJECTION);
     glOrtho(-150,150,-100,100,-100,100);
 }
-//number method is used to write the numbers found in the clock
 void numbers()
 {
     glRasterPos2i(58,0);
@@ -24,7 +23,6 @@ void numbers()
     glRasterPos2i(1,57);
     glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24,'2');
 }
-//display function responsible to design the classic clock interface
 void Display()
 {
     glClear(GL_COLOR_BUFFER_BIT);
@@ -53,8 +51,6 @@ void Display()
         }
     }
     glEnd();
-
-
     numbers();
     //the following is for second hand
     glColor3f(0.0f, 0.0f, 1.0f);
@@ -144,8 +140,6 @@ void Display()
     glEnd();
     glFlush();
 }
-//rotate function manages how the hour,minute and second
-//hand are simulated
 void rotate()
 {
     if(angleSec<360)
